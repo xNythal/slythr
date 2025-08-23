@@ -2,7 +2,7 @@ function login() {
   window.location.href = "http://localhost:12784/auth/login";
 }
 function logout() {
-  fetch("http://localhost:12784/auth/logout", {method: "POST"})
+  fetch("http://localhost:12784/auth/logout", {method: "POST", credentials: "include"})
 }
 function dashboard() {
   window.location.href = "dashboard"
