@@ -4,6 +4,9 @@ function login() {
 function logout() {
   fetch("http://localhost:12784/auth/logout", {method: "POST"})
 }
+function dashboard() {
+  window.location.href = "dashboard"
+}
 
 fetch("http://localhost:12784/me/guilds", {
   credentials: "include",
