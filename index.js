@@ -1,14 +1,12 @@
 function login() {
   window.location.href = "http://localhost:12784/auth/login";
 }
-function logout() {
-  fetch("http://localhost:12784/auth/logout", {method: "POST", credentials: "include"})
-}
+
 function dashboard() {
-  window.location.href = "dashboard"
+  window.location.href = "dashboard.html"
 }
 
-fetch("http://localhost:12784/me/guilds", {
+fetch("http://localhost:12784/me/guilds?owner=true", {
   credentials: "include",
 })
   .then((res) => res.json())
