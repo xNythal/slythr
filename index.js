@@ -8,7 +8,7 @@ fetch("http://localhost:12784/me/guilds", {
 .then(res => res.json())
 .then(data => {
  for (let index = 0; index < data.length; index++) {
-  const guild = array[index];
+  const guild = data[index];
   guildname = guild["name"] + " "
     document.getElementById("me").innerText += guildname
  }
