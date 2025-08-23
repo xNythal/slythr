@@ -7,8 +7,10 @@ fetch("http://localhost:12784/me/guilds", {
 })
 .then(res => res.json())
 .then(data => {
-  data.forEach(guild => {
-    guildname = guild["name"] + " "
+ for (let index = 0; index < data.length; index++) {
+  const guild = array[index];
+  guildname = guild["name"] + " "
     document.getElementById("me").innerText += guildname
-  });
+ }
+    
 });
