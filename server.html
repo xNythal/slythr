@@ -1,5 +1,5 @@
-Hello, <span>Name</span>
+Hello, <span id="server-name">Name</span>
 <script>
     const params = new URLSearchParams(window.location.search)
-    document.querySelector("span").innerText = params.get("id")
+    document.getElementById("server-name").innerText = params.get("id")
 </script>
