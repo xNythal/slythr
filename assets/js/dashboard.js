@@ -66,7 +66,7 @@ function toggleAutoMod(id, value) {
     'Content-Type': 'application/json'
   },
     body: JSON.stringify({
-      auto_mod: !value
+      auto_mod: document.getElementById("auto-mod").value
     })
   })
 }
