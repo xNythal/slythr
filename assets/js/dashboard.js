@@ -45,6 +45,25 @@ function updateServer(id) {
     .then((data) => {
       data = data[0]
       document.getElementById("server-name").innerText = data.name;
-      document.getElementById("auto-mod")
+      fetch(`${backendApiUrl}/me/guilds/${id}`, {
+    credentials: "include",
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      document.getElementById("auto-mod").value = data["auto_mod"]
+      document.getElementById("auto-mod").onchange = () => {
+        toggleAutoMod(id, data["auto_mod"])
+      }
     });
+    });
+}
+
+function toggleAutoMod(id, value) {
+  fetch(`${backendApiUrl}/me/guilds/${id}`, {
+    credentials: "include",
+    method: "PATCH",
+    body: {
+      "auto_mod": !value
+    }
+  })
 }
