@@ -1,5 +1,5 @@
 Hello, <span>Name</span>
 <script>
-    const params = new URLSearchParams(window.location.href)
+    const params = new URLSearchParams(window.location.search)
     document.querySelector("span").innerText = params.get("id")
 </script>
