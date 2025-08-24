@@ -50,7 +50,7 @@ function updateServer(id) {
   })
     .then((res) => res.json())
     .then((data) => {
-      document.getElementById("auto-mod").value = data["auto_mod"]
+      document.getElementById("auto-mod").checked = data.auto_mod
       document.getElementById("auto-mod").onchange = (event) => {
   toggleAutoMod(event.target, id, data["auto_mod"]);
 };
