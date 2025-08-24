@@ -1,4 +1,5 @@
+Hello, <span>Name</span>
 <script>
-    params = new URLSearchParams(window.location.href)
-    console.log(params)
+    const params = new URLSearchParams(window.location.href)
+    document.querySelector("span").innerText = params.get("id")
 </script>
