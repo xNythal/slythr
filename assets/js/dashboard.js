@@ -28,8 +28,8 @@ fetch(`${backendApiUrl}/me/guilds?owner=true`, { credentials: "include" })
 
 function selectServer(id) {
   fetch(`server.html`)
-    .then(res => res.text())
-    .then(text => {
+    .then((res) => res.text())
+    .then((text) => {
       const main = document.querySelector("main");
       main.innerHTML = text;
 
@@ -38,5 +38,12 @@ function selectServer(id) {
 }
 
 function updateServer(id) {
-  document.getElementById("server-name").innerText = id;
+  fetch(`${backendApiUrl}/me/guilds?owner=true&id=${id}`, {
+    credentials: "include",
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      data = data[0]
+      document.getElementById("server-name").innerText = data.name;
+    });
 }
