@@ -1,70 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html data-bs-theme="dark">
 
 <head>
   <title>Slythr - Dashboard</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body>
-  <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="width: 280px; min-height: 100vh;"> <a href="/slythr"
-      class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"> <svg
-        class="bi pe-none me-2" width="40" height="32" aria-hidden="true">
-        <use xlink:href="#bootstrap"></use>
-      </svg> <span class="fs-4">Sidebar</span> </a>
-    <hr>
-    <ul class="nav nav-pills flex-column mb-auto">
-      <li class="nav-item"> <a href="#" class="nav-link active" aria-current="page"> <svg class="bi pe-none me-2"
-            width="16" height="16" aria-hidden="true">
-            <use xlink:href="#home"></use>
-          </svg>
-          Home
-        </a> </li>
-      <li> <a href="#" class="nav-link text-white"> <svg class="bi pe-none me-2" width="16" height="16"
-            aria-hidden="true">
-            <use xlink:href="#speedometer2"></use>
-          </svg>
-          Dashboard
-        </a> </li>
-      <li> <a href="#" class="nav-link text-white"> <svg class="bi pe-none me-2" width="16" height="16"
-            aria-hidden="true">
-            <use xlink:href="#table"></use>
-          </svg>
-          Orders
-        </a> </li>
-      <li> <a href="#" class="nav-link text-white"> <svg class="bi pe-none me-2" width="16" height="16"
-            aria-hidden="true">
-            <use xlink:href="#grid"></use>
-          </svg>
-          Products
-        </a> </li>
-      <li> <a href="#" class="nav-link text-white"> <svg class="bi pe-none me-2" width="16" height="16"
-            aria-hidden="true">
-            <use xlink:href="#people-circle"></use>
-          </svg>
-          Customers
-        </a> </li>
+  <div class="d-flex" style="height: 100vh;">
+  <!-- Sidebar -->
+  <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark"
+       style="width: 95px; background-color: rgb(38, 42, 46) !important;">
+    <!-- Nav Items -->
+    <ul class="nav nav-pills flex-column mb-auto" id="sidebar">
+      <li class="nav-item">
+        <a href="#">
+        <img id="profile-picture" class="sidebar-item"
+             src="https://tse2.mm.bing.net/th/id/OIP.b-VXMyLRKFeTc9B0RNFAXwHaHa?rs=1&pid=ImgDetMain&o=7&rm=3"
+             alt="Profile Picture"
+             width="60"
+             height="60">
+      </a>
+      </li>
+      <hr style="border: none; height: 2px; background-color: rgba(255, 255, 255, 0.15);">
     </ul>
-    <hr>
-    <div class="dropdown"> <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
-        data-bs-toggle="dropdown" aria-expanded="false"> <img id="profile-picture" src="https://tse2.mm.bing.net/th/id/OIP.b-VXMyLRKFeTc9B0RNFAXwHaHa?rs=1&pid=ImgDetMain&o=7&rm=3" alt="" width="32"
-          height="32" class="rounded-circle me-2"> <strong id="display-name">Loading...</strong> </a>
-      <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-        <li><a class="dropdown-item" href="#">New project...</a></li>
-        <li><a class="dropdown-item" href="#">Settings</a></li>
-        <li><a class="dropdown-item" href="#">Profile</a></li>
-        <li>
-          <hr class="dropdown-divider">
-        </li>
-        <li><a class="dropdown-item" onclick="signout()" href="/slythr">Sign out</a></li>
-      </ul>
-    </div>
+
   </div>
+
+  <!-- Main Content -->
+  <main class="flex-grow-1 p-3 text-white">
+    
+  </main>
+</div>
+  <script src="assets/js/constants.js"></script>
   <script src="assets/js/dashboard.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
     crossorigin="anonymous"></script>
 </body>
-
 </html>

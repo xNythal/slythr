@@ -1,0 +1,1 @@
+const backendApiUrl = "http://localhost:12784"

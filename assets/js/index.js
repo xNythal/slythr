@@ -1,5 +1,5 @@
 function login() {
-  window.location.href = "http://localhost:12784/auth/login";
+  window.location.href = `${backendApiUrl}/auth/login`;
 }
 
 function dashboard() {
