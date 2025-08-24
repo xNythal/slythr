@@ -63,7 +63,7 @@ function toggleAutoMod(id, value) {
     credentials: "include",
     method: "PATCH",
     body: JSON.stringify({
-      "auto_mod": !value
+      auto_mod: !value
     })
   })
 }
