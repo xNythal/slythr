@@ -22,7 +22,7 @@ fetch(`${backendApiUrl}/me/guilds?owner=true`, { credentials: "include" })
         ext = "gif";
       }
       const imgUrl = `https://cdn.discordapp.com/icons/${guild.id}/${guild.icon}.${ext}`;
-      sidebar.innerHTML += `<li class="nav-item mb-2"><a href="#" onclick="selectServer(${guild.id})"><img src="${imgUrl}" class="sidebar-item" alt="${guild.name}" width="60" height="60""></a></li>`;
+      sidebar.innerHTML += `<li class="nav-item mb-2"><a href="#" onclick="selectServer('${guild.id}')"><img src="${imgUrl}" class="sidebar-item" alt="${guild.name}" width="60" height="60""></a></li>`;
     });
   });
 
