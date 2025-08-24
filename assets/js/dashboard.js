@@ -31,6 +31,13 @@ function selectServer(id) {
   fetch(`server.html?id=${id}`)
     .then((res) => res.text())
     .then((text) => {
-      document.querySelector("main").innerHTML = text;
+      const main = document.querySelector("main");
+      main.innerHTML = text;
+
+      main.querySelectorAll("script").forEach(script => {
+        const newScript = document.createElement("script");
+        newScript.text = script.innerText;
+        document.body.appendChild(newScript);
+      });
     });
 }
