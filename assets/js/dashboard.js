@@ -27,6 +27,7 @@ fetch(`${backendApiUrl}/me/guilds?owner=true`, { credentials: "include" })
   });
 
 function selectServer(id) {
+  history.pushState({}, "", `?id=${id}`);
   fetch(`server.html?id=${id}`)
     .then((res) => res.text())
     .then((text) => {
