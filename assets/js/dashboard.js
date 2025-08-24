@@ -45,5 +45,6 @@ function updateServer(id) {
     .then((data) => {
       data = data[0]
       document.getElementById("server-name").innerText = data.name;
+      document.getElementById("auto-mod")
     });
 }
