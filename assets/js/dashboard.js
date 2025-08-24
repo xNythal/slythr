@@ -62,6 +62,9 @@ function toggleAutoMod(id, value) {
   fetch(`${backendApiUrl}/me/guilds/${id}`, {
     credentials: "include",
     method: "PATCH",
+    headers: {
+    'Content-Type': 'application/json'
+  },
     body: JSON.stringify({
       auto_mod: !value
     })
