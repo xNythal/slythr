@@ -27,16 +27,16 @@ fetch(`${backendApiUrl}/me/guilds?owner=true`, { credentials: "include" })
   });
 
 function selectServer(id) {
-  fetch(`server.html?id=${id}`)
-    .then((res) => res.text())
-    .then((text) => {
+  fetch(`server.html`)
+    .then(res => res.text())
+    .then(text => {
       const main = document.querySelector("main");
       main.innerHTML = text;
 
-      main.querySelectorAll("script").forEach(script => {
-        const newScript = document.createElement("script");
-        newScript.text = script.innerText;
-        document.body.appendChild(newScript);
-      });
+      updateServer(id);
     });
+}
+
+function updateServer(id) {
+  document.getElementById("server-name").innerText = id;
 }
