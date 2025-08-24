@@ -51,14 +51,14 @@ function updateServer(id) {
     .then((res) => res.json())
     .then((data) => {
       document.getElementById("auto-mod").value = data["auto_mod"]
-      document.getElementById("auto-mod").onchange = () => {
-        toggleAutoMod(id, data["auto_mod"])
+      document.getElementById("auto-mod").onchange = (this) => {
+        toggleAutoMod(this, id, data["auto_mod"])
       }
     });
     });
 }
 
-function toggleAutoMod(id, value) {
+function toggleAutoMod(this, id, value) {
   fetch(`${backendApiUrl}/me/guilds/${id}`, {
     credentials: "include",
     method: "PATCH",
@@ -66,7 +66,7 @@ function toggleAutoMod(id, value) {
     'Content-Type': 'application/json'
   },
     body: JSON.stringify({
-      auto_mod: document.getElementById("auto-mod").value
+      auto_mod: this.checked
     })
   })
 }
